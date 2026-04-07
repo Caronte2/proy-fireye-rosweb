@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'DigitalFinal';
+    src: url('/src/fonts/E4_Digital_Final.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'DigitalFinal', sans-serif;
+    font-size: 48px;
+    color: #333;
+}
+
+h2 {
+    font-family: 'DigitalFinal', sans-serif;
+    font-size: 36px;
+    color: #555;
+}
+
+h3 {
+    font-family: 'DigitalFinal', sans-serif;
+    font-size: 24px;
+    color: #333;
+}
+
+button{
+    border: 2px solid #870000;
+    border-radius: 33px;
+    background-color: #F5F5F7;
+}

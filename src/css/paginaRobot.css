@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #DFDFDF;
+}
+
+#logo{
+    width: 11rem;
+    height: 8rem;
+}
+
+header button{
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+    border: none;
+}
+
+header button img{
+    width: 3rem;
+    height: 3rem;
+}
