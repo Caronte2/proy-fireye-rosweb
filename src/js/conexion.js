@@ -4,12 +4,16 @@ document.addEventListener('DOMContentLoaded', event => {
 
     document.getElementById("btn_con").addEventListener("click", connect)
     document.getElementById("btn_dis").addEventListener("click", disconnect)
+    document.getElementById("btn_mision").addEventListener("click", empezarMision);
 
     data = {
         // ros connection
         ros: null,
         rosbridge_address: 'ws://127.0.0.1:9090/',
         connected: false,
+        // service information
+	    service_busy: false,
+	    service_response: ''
     }
 
     function connect(){
@@ -38,6 +42,18 @@ document.addEventListener('DOMContentLoaded', event => {
 	      data.ros.close()
 	      data.connected = false
         console.log('Clic en botón de desconexión')
+    }
+
+    function empezarMision(){
+      let service = new ROSLIB.Service({
+        ros : data.ros,
+        name : '/iniciar_mision',
+        serviceType : 'std_srvs/Trigger', // ✅ corregido
+      });
+
+      service.callService(new ROSLIB.ServiceRequest({}), function(result) {
+        console.log('Resultado de la misión: ' + result.message);
+      });
     }
 
 });
