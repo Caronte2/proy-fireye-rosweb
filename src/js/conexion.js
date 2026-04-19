@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', event => {
 
     document.getElementById("btn_con").addEventListener("click", connect)
     document.getElementById("btn_dis").addEventListener("click", disconnect)
-
+    document.getElementById("btn_con").addEventListener("click", movimientoAdelante)
+    document.getElementById("btn_con").addEventListener("click", movimientoAtras)
+    document.getElementById("btn_con").addEventListener("click", movimientoDerecha)
+    document.getElementById("btn_con").addEventListener("click", movimientoIzquierda)
     data = {
         // ros connection
         ros: null,
@@ -38,6 +41,22 @@ document.addEventListener('DOMContentLoaded', event => {
 	      data.ros.close()
 	      data.connected = false
         console.log('Clic en botón de desconexión')
+    }
+
+    function movimientoAdelante(){
+
+    }
+
+    function movimientoAtras(){
+        
+    }
+
+    function movimientoDerecha(){
+        
+    }
+
+    function movimientoIzquierda(){
+        
     }
 
 });
