@@ -33,8 +33,18 @@
             <button id="btn_con">Conectar</button>
             <button id="btn_dis">Desconectar</button>
             </div>
-            <div class="col">
+            <div class="col" id="analisis-imagenes">
                 <h3>Análisis de Imágenes</h3>
+                <p>[09:00] Sistema encendido. Revisión de sensores completada.<br>
+                [09:05] Conexión establecida. GPS activo en Sector Norte.<br>
+                [09:15] Carga solar activa. Rendimiento de batería óptimo.<br>
+                [09:30] Patrulla iniciada. Vigilando perímetro de la finca.<br>
+                [09:45] Temperatura del suelo: 24°C. Nivel de Riesgo: Bajo.<br>
+                [10:10] Objeto detectado en el camino. Analizando imagen...<br>
+                [10:12] Obstáculo identificado. El robot continúa la ruta.<br>
+                [10:30] Señal de vigilancia estable. Transmitiendo datos.<br>
+                [10:50] Batería al 85%. Autonomía calculada: 12 horas.<br>
+                [11:05] Zona de pasto seco revisada. Sin anomalías.</p>
             </div>
         </div>
         <div class="row">
@@ -43,7 +53,7 @@
                     <h3>Control de Movimiento</h3>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" id="botones-control-movimiento">
                         <button id="btn_delante">Adelante</button>
                         <button id="btn_atras">Atrás</button>
                         <button id="btn_izquierda">Izquierda</button>
@@ -52,13 +62,17 @@
                         <button id="btn_mision">Ir a punto</button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="sistema-critico">
                     <h3>Sistema Críticos</h3>
+                    <img src="../img/bateria.svg" alt="">
+                    <img src="../img/cantidadRed.svg" alt="">
+                    <img src="../img/velocidad.svg" alt="">
                 </div>
                 <div class="row"></div>
             </div>
-            <div class="col">
+            <div class="col" id="radar">
                 <h3>Detección de Objetos</h3>
+                <img src="../img/radar.jpeg" alt="">
             </div>
         </div>
         <div class="row">

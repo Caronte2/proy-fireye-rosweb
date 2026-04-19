@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'DigitalFinal';
-    src: url('/src/fonts/E4_Digital_Final.ttf') format('truetype');
+    src: url('../fonts/E4_Digital_Final.ttf') format('truetype');
 }
 
 h1 {
@@ -26,3 +26,4 @@ button{
     border-radius: 33px;
     background-color: #F5F5F7;
 }
+
