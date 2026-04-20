@@ -4,12 +4,20 @@ document.addEventListener('DOMContentLoaded', event => {
 
     document.getElementById("btn_con").addEventListener("click", connect)
     document.getElementById("btn_dis").addEventListener("click", disconnect)
+    document.getElementById("btn_mision").addEventListener("click", empezarMision);
+    document.getElementById("btn_delante").addEventListener("click", movimientoAdelante)
+    document.getElementById("btn_atras").addEventListener("click", movimientoAtras)
+    document.getElementById("btn_derecha").addEventListener("click", movimientoDerecha)
+    document.getElementById("btn_izquierda").addEventListener("click", movimientoIzquierda)
+    document.getElementById("btn_parar").addEventListener("click", movimientoParar)
 
     data = {
         // ros connection
         ros: null,
         rosbridge_address: 'ws://127.0.0.1:9090/',
         connected: false,
+	    service_busy: false,
+	    service_response: ''
     }
 
     function connect(){
@@ -39,5 +47,139 @@ document.addEventListener('DOMContentLoaded', event => {
 	      data.connected = false
         console.log('Clic en botón de desconexión')
     }
+
+    function empezarMision(){
+        let service = new ROSLIB.Service({
+        ros : data.ros,
+        name : '/iniciar_mision',
+        serviceType : 'std_srvs/Trigger', 
+        });
+
+        console.log("Clic en botón de iniciar misión");
+        service.callService(new ROSLIB.ServiceRequest({}), function(result) {
+        console.log('Resultado de la misión: ' + result.message);
+        });
+    }
+
+    function movimientoAdelante(){
+    	data.service_busy = true
+	    data.service_response = ''
+
+        //definimos los datos del servicio
+	    let service = new ROSLIB.Service({
+	        ros: data.ros,
+	        name: '/movimiento',
+	        serviceType: 'proy_fireye_interfaces/srv/   ',
+	    })
+
+	    let request = new ROSLIB.ServiceRequest({
+	        move: 'delante'
+	    })
+
+	    service.callService(request, (result) => {
+	        data.service_busy = false
+	        data.service_response = JSON.stringify(result)
+	    }, (error) => {
+	        data.service_busy = false
+	        console.error(error)
+	    })
+    }
+
+    function movimientoAtras(){
+        data.service_busy = true
+	    data.service_response = ''
+
+        //definimos los datos del servicio
+	    let service = new ROSLIB.Service({
+	        ros: data.ros,
+	        name: '/movimiento',
+	        serviceType: 'proy_fireye_interfaces/srv/   ',
+	    })
+
+	    let request = new ROSLIB.ServiceRequest({
+	        move: 'atras'
+	    })
+
+	    service.callService(request, (result) => {
+	        data.service_busy = false
+	        data.service_response = JSON.stringify(result)
+	    }, (error) => {
+	        data.service_busy = false
+	        console.error(error)
+	    })
+    }
+
+    function movimientoDerecha(){
+        data.service_busy = true
+	    data.service_response = ''
+
+        //definimos los datos del servicio
+	    let service = new ROSLIB.Service({
+	        ros: data.ros,
+	        name: '/movimiento',
+	        serviceType: 'proy_fireye_interfaces/srv/   ',
+	    })
+
+	    let request = new ROSLIB.ServiceRequest({
+	        move: 'derecha'
+	    })
+
+	    service.callService(request, (result) => {
+	        data.service_busy = false
+	        data.service_response = JSON.stringify(result)
+	    }, (error) => {
+	        data.service_busy = false
+	        console.error(error)
+	    })
+    }
+
+    function movimientoIzquierda(){
+        data.service_busy = true
+	    data.service_response = ''
+
+        //definimos los datos del servicio
+	    let service = new ROSLIB.Service({
+	        ros: data.ros,
+	        name: '/movimiento',
+	        serviceType: 'proy_fireye_interfaces/srv/   ',
+	    })
+
+	    let request = new ROSLIB.ServiceRequest({
+	        move: 'izquierda'
+	    })
+
+	    service.callService(request, (result) => {
+	        data.service_busy = false
+	        data.service_response = JSON.stringify(result)
+	    }, (error) => {
+	        data.service_busy = false
+	        console.error(error)
+	    })
+    }
+
+    function movimientoParar(){
+        data.service_busy = true
+	    data.service_response = ''
+
+        //definimos los datos del servicio
+	    let service = new ROSLIB.Service({
+	        ros: data.ros,
+	        name: '/movimiento',
+	        serviceType: 'proy_fireye_interfaces/srv/   ',
+	    })
+
+	    let request = new ROSLIB.ServiceRequest({
+	        move: 'parar'
+	    })
+
+	    service.callService(request, (result) => {
+	        data.service_busy = false
+	        data.service_response = JSON.stringify(result)
+	    }, (error) => {
+	        data.service_busy = false
+	        console.error(error)
+	    })
+    }
+
 
 });
