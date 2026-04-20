@@ -89,9 +89,9 @@ Proy-Fireye-RosWeb/
 
 | Nombre | GitHub |
 |---|---|
-| Manuel Pérez | — |
-| Yixuan Chen | — |
+| Manuel Pérez | [@Diabolo-kun](https://github.com/Diabolo-kun)|
+| Yixuan Chen | [@chen0357](https://github.com/chen0357) |
 | Pablo Alejandro Chasi Cajamarca | [@Caronte2](https://github.com/Caronte2) |
-| Imanol Figuero Parras | — |
-| Greysy Burgos Salazar | — |
-| Yilun Jiang | — |
+| Imanol Figuero Parras | [@Diabolo-kun](https://github.com/Diabolo-kun) |
+| Greysy Burgos Salazar | [@GreysyBurgos](https://github.com/GreysyBurgos) |
+| Yilun Jiang | [@Eason1902](https://github.com/Eason1902) |
